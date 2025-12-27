@@ -1,0 +1,11 @@
+output_formats:
+  - pdf
+  - epub
+  - web
+default_language: sv
+translations:
+  - en
+  - fr
+  - es
+  - de
+metadata_version: 1.0

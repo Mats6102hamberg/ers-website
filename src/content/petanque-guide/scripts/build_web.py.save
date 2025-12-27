@@ -1,0 +1,216 @@
+import os, re, html, pathlib
+
+ROOT = pathlib.Path('.')
+SRC = {
+  'sv': ROOT/'originals'/'sv',
+  'en': ROOT/'translations'/'en',
+  'fr': ROOT/'translations'/'fr',
+  'es': ROOT/'translations'/'es',
+  'de': ROOT/'translations'/'de',
+}
+OUT = ROOT/'build'/'web'
+
+def parse_frontmatter(p):
+    # Läs YAML-frontmatter (enkelt: nyckel: värde)
+    text = p.read_text(encoding='utf-8', errors='ignore')
+    m = re.match(r'^---\s*\n(.*?)\n---\s*', text, flags=re.S)
+    meta = {}
+    if m:
+        block = m.group(1)
+        for line in block.splitlines():
+            if ':' in line:
+                k, v = line.split(':', 1)
+                meta[k.strip()] = v.strip().strip('"').strip("'")
+    return meta
+
+def h(s): return html.escape(str(s))
+
+def write_file(path, content):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(content, encoding='utf-8')
+
+STYLE = """
+<style>
+  
+body{font-family:system-ui,-apple-system,Segoe 
+UI,Robotocd 
+~/Desktop/petanque-guide
+rm -f scripts/build_web.py
+cat > scripts/build_web.py 
+<<'PY'
+import re, html, pathlib
+
+ROOT = pathlib.Path('.')
+SV_DIR = ROOT/'originals'/'sv'
+SRC = {
+    'sv': SV_DIR,
+    'en': 
+ROOT/'translations'/'en',
+    'fr': 
+ROOT/'translations'/'fr',
+    'es': 
+ROOT/'translations'/'es',
+    'de': 
+ROOT/'translations'/'de',
+}
+OUT = ROOT/'build'/'web'
+LANGS = 
+['sv','en','fr','es','de']
+
+def parse_frontmatter(p):
+    text = 
+p.read_text(encoding='utf-8', 
+errors='ignore')
+    m = 
+re.match(r'^---\s*\n(.*?)\n---\s*', 
+text, flags=re.S)
+    meta = {}
+    if m:
+        for line in 
+m.group(1).splitlines():
+            if ':' in line:
+                k, v = 
+line.split(':', 1)
+                meta[k.strip()] 
+= 
+v.strip().strip('"').strip("'")
+    return meta
+
+def h(s): return 
+html.escape(str(s))
+def write(path, content):
+    
+path.parent.mkdir(parents=True, 
+exist_ok=True)
+    path.write_text(content, 
+encoding='utf-8')
+
+STYLE = """
+<style>
+  
+body{font-family:system-ui,-apple-system,Segoe 
+UI,Roboto,Arial,sans-serif;max-width:920px;margin:2rem 
+auto;padding:0 
+1rem;line-height:1.6}
+  h1{margin:0 0 .5rem}
+  h2{margin:1.2rem 0 .4rem}
+  .lang 
+a{display:inline-block;margin:.25rem 
+.5rem;padding:.5rem 
+.8rem;border-radius:10px;border:1px 
+solid 
+#e5e5e5;text-decoration:none;color:#222}
+  .card{border:1px solid 
+#eee;border-radius:12px;padding:1rem;margin:.5rem 
+0}
+  
+.muted{color:#666;font-size:.92rem}
+  
+.chip{font-size:.8rem;color:#444;background:#f5f5f5;border:1px 
+solid 
+#eee;border-radius:999px;padding:.18rem 
+.55rem;margin-left:.5rem}
+  
+.part{margin-top:1.4rem;border-top:1px 
+solid #eee;padding-top:.6rem}
+  
+a{color:#0b6;text-decoration:none}
+</style>
+"""
+
+def layout(title, body):
+    return f"<!doctype 
+html><html lang='sv'><meta 
+charset='utf-8'><title>{h(title)}</title>{STYLE}<body>{body}</body></html>"
+
+def build_language(lang, 
+src_dir):
+    items = []
+    for p in 
+sorted(src_dir.glob('*.md')):
+        meta = 
+parse_frontmatter(p)
+        if not meta: continue
+        try:
+            part = 
+int(meta.get('part','0')); 
+chapter = 
+int(meta.get('chapter','0'))
+        except ValueError:
+            part, chapter = 0, 0
+        title = 
+meta.get('title', p.stem)
+        items.append((part, 
+chapter, title, p.name))
+    items.sort(key=lambda 
+x:(x[0], x[1]))
+
+    # index
+    rows, current_part = [], 
+None
+    for part, chapter, title, 
+fname in items:
+        if part != current_part:
+            if current_part is 
+not None: rows.append("</div>")
+            rows.append(f"<div 
+class='part'><h2>Del 
+{part}</h2>")
+            current_part = part
+        url = 
+f"./{fname.replace('.md','.html')}"
+        rows.append(f"<div 
+class='card'><a 
+href='{url}'><strong>{h(title)}</strong></a> 
+<span class='chip'>Kapitel 
+{chapter}</span></div>")
+    if current_part is not None: 
+rows.append("</div>")
+
+    body = f"<h1>Petanque – 
+Innehåll 
+({lang.upper()})</h1><div>{''.join(rows)}</div><p 
+class='muted'><a 
+href='../index.html'>← Till 
+språkval</a></p>"
+    write(OUT/lang/'index.html', 
+layout(f"Innehåll ({lang})", 
+body))
+
+    # kapitelstubbar
+    for part, chapter, title, 
+fname in items:
+        content = 
+f"<h1>{h(title)}</h1><p 
+class='muted'>Språk: 
+{lang.upper()} · Del {part} · 
+Kapitel {chapter}</p><p>Innehåll 
+kommer här (fil: 
+<code>{h(fname)}</code>).</p><p 
+class='muted'><a 
+href='./index.html'>← Till 
+innehåll</a></p>"
+        
+write(OUT/lang/fname.replace('.md','.html'), 
+layout(title, content))
+
+def main():
+    links = ' '.join([f"<a 
+class='lang' 
+href='./{l}/index.html'>{l.upper()}</a>" 
+for l in LANGS])
+    write(OUT/'index.html', 
+layout('Petanque – Språk', 
+f"<h1>Välj språk</h1><div 
+class='lang'>{links}</div><p 
+class='muted'>Genererat från 
+originals/ och 
+translations/.</p>"))
+    for l, path in SRC.items():
+        build_language(l, path)
+
+if __name__ == '__main__':
+    main()
+PY
+
+

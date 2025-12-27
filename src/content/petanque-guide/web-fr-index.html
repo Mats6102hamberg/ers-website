@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pétanque: Den Kompletta Guiden - Interaktiv Digital Bok</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f0f1e;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 80px 20px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(210,105,30,0.1) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.1); opacity: 0.5; }
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 72px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #fff 0%, #D2691E 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 40px;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .badge {
+            background: rgba(210,105,30,0.2);
+            border: 1px solid rgba(210,105,30,0.5);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #D2691E;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #D2691E 0%, #8B4513 100%);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(210,105,30,0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(210,105,30,0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            border: 2px solid rgba(255,255,255,0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .book-mockup {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .book-cover {
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+
+        .book-cover h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .book-cover p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        /* Language Selector */
+        .language-selector {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            z-index: 100;
+        }
+
+        .language-selector select {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .language-selector select:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 120px 20px;
+            background: #0f0f1e;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 80px;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            margin-bottom: 20px;
+        }
+
+        .section-header p {
+            font-size: 20px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+        }
+
+        .features-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, rgba(210,105,30,0.1) 0%, rgba(139,69,19,0.1) 100%);
+            border: 1px solid rgba(210,105,30,0.3);
+            padding: 40px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(210,105,30,0.3);
+            border-color: rgba(210,105,30,0.6);
+        }
+
+        .feature-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #D2691E;
+        }
+
+        .feature-description {
+            font-size: 16px;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Interactive Tools Section */
+        .interactive-tools {
+            padding: 120px 20px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .tools-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+        }
+
+        .tool-card {
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(210,105,30,0.3);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: scale(1.05);
+            border-color: rgba(210,105,30,0.6);
+            box-shadow: 0 20px 60px rgba(210,105,30,0.4);
+        }
+
+        .tool-preview {
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+        }
+
+        .tool-content {
+            padding: 30px;
+        }
+
+        .tool-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #D2691E;
+        }
+
+        .tool-description {
+            font-size: 16px;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 20px;
+        }
+
+        .tool-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .tool-features li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .tool-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: 700;
+        }
+
+        /* Apps Section */
+        .apps-section {
+            padding: 120px 20px;
+            background: #0f0f1e;
+        }
+
+        .apps-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .app-card {
+            background: linear-gradient(135deg, rgba(102,126,234,0.1) 0%, rgba(118,75,162,0.1) 100%);
+            border: 2px solid rgba(102,126,234,0.3);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .app-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(102,126,234,0.6);
+            box-shadow: 0 20px 40px rgba(102,126,234,0.3);
+        }
+
+        .app-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+
+        .app-name {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .app-description {
+            font-size: 16px;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 20px;
+        }
+
+        .app-pricing {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .app-price {
+            font-size: 32px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .app-price-period {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .discount-badge {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 120px 20px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .pricing-card {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(210,105,30,0.5);
+            border-radius: 30px;
+            padding: 60px;
+            text-align: center;
+        }
+
+        .pricing-header {
+            margin-bottom: 40px;
+        }
+
+        .pricing-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .pricing-amount {
+            font-size: 72px;
+            font-weight: 900;
+            color: #D2691E;
+            margin-bottom: 10px;
+        }
+
+        .pricing-period {
+            font-size: 18px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 15px 0;
+            padding-left: 35px;
+            position: relative;
+            font-size: 18px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-content h1 {
+                font-size: 48px;
+            }
+
+            .section-header h2 {
+                font-size: 40px;
+            }
+
+            .features-grid,
+            .tools-grid,
+            .apps-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <select id="languageSelector">
+            <option value="se" selected>🇸🇪 Svenska</option>
+            <option value="en">🇬🇧 English</option>
+            <option value="fr">🇫🇷 Français</option>
+            <option value="es">🇪🇸 Español</option>
+            <option value="de">🇩🇪 Deutsch</option>
+            <option value="th">🇹🇭 ไทย</option>
+        </select>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Pétanque: Den Kompletta Guiden</h1>
+                <p class="hero-subtitle">Från Nybörjare till Proffs – En Levande, Interaktiv Digital Bok</p>
+                <p class="hero-description">
+                    Mer än bara en bok – ett komplett ekosystem för att bemästra pétanque. 
+                    Med månatliga uppdateringar, interaktiva verktyg och tillgång till premium-appar.
+                </p>
+
+                <div class="hero-badges">
+                    <span class="badge">✨ Månatliga Uppdateringar</span>
+                    <span class="badge">📊 Interaktiva Verktyg</span>
+                    <span class="badge">🌍 6 Språk</span>
+                    <span class="badge">📱 Inkluderar Appar</span>
+                </div>
+
+                <div class="cta-buttons">
+                    <a href="https://mhg10.gumroad.com/l/qfwmvg" class="btn-primary">
+                        Köp Boken Nu →
+                    </a>
+                    <a href="upload.html" class="btn-secondary">
+                        Redan köpt? Aktivera
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="book-mockup">
+                    <div class="book-cover">
+                        <h2>PÉTANQUE</h2>
+                        <p>Den Kompletta Guiden</p>
+                        <p style="margin-top: 20px; font-size: 14px; opacity: 0.8;">15 Kapitel • 3 Bilagor • Interaktiva Verktyg</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="section-header">
+            <h2>Vad gör denna bok unik?</h2>
+            <p>Inte bara en statisk PDF – en levande plattform som växer och utvecklas varje månad</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <div class="feature-title">15 Omfattande Kapitel</div>
+                <div class="feature-description">
+                    Från grundläggande tekniker till avancerad klotfysik. Täcker allt från grepp och ställning 
+                    till psykologisk krigföring och professionell taktik.
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎙️</div>
+                <div class="feature-title">Månatliga Uppdateringar</div>
+                <div class="feature-description">
+                    Nya artiklar, intervjuer med världsstjärnor, regeländringar och turneringsanalyser. 
+                    Boken uppdateras kontinuerligt med färskt innehåll.
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <div class="feature-title">Interaktiva Verktyg</div>
+                <div class="feature-description">
+                    Träningsjournal, matchprotokoll med automatisk analys, fusklapp och mer. 
+                    Allt sparas automatiskt i din webbläsare.
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <div class="feature-title">6 Språk Tillgängliga</div>
+                <div class="feature-description">
+                    Svenska, Engelska, Franska, Spanska, Tyska och Thailändska. 
+                    Välj ditt språk och få hela boken översatt.
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📥</div>
+                <div class="feature-title">Nedladdningsbara Resurser</div>
+                <div class="feature-description">
+                    Skriv ut fusklappen och ha med på banan. Använd träningsjournalen för att 
+                    dokumentera din utveckling över tid.
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🏆</div>
+                <div class="feature-title">Från Proffsen</div>
+                <div class="feature-description">
+                    Lär dig av de bästa. Intervjuer, tekniker och strategier från världens 
+                    främsta pétanque-spelare.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Tools Section -->
+    <section class="interactive-tools">
+        <div class="section-header">
+            <h2>Interaktiva Verktyg Inkluderade</h2>
+            <p>Praktiska verktyg som hjälper dig att förbättra ditt spel och följa din utveckling</p>
+        </div>
+
+        <div class="tools-grid">
+            <a href="journal-entrainement.html" class="tool-card" style="text-decoration: none; color: inherit;">
+                <div class="tool-preview">📊</div>
+                <div class="tool-content">
+                    <div class="tool-title">Journal d'Entraînement</div>
+                    <div class="tool-description">
+                        Dokumentera varje träningspass och följ din utveckling över tid. 
+                        Perfekt för att identifiera styrkor och svagheter.
+                    </div>
+                    <ul class="tool-features">
+                        <li>Spara datum, underlag och väderförhållanden</li>
+                        <li>Dokumentera träffprocent och teknik</li>
+                        <li>Skriv reflektioner och nästa steg</li>
+                        <li>Exporter et imprimer</li>
+                    </ul>
+                </div>
+            </a>
+
+            <a href="protocole-match.html" class="tool-card" style="text-decoration: none; color: inherit;">
+                <div class="tool-preview">🏆</div>
+                <div class="tool-content">
+                    <div class="tool-title">Protocole de Match (Interactif)</div>
+                    <div class="tool-description">
+                        Komplett matchprotokoll med automatisk statistik och analys. 
+                        Sparas automatiskt i webbläsaren.
+                    </div>
+                    <ul class="tool-features">
+                        <li>Spara lag och poäng per omgång</li>
+                        <li>Automatisk statistik (vunna omgångar, snittpoäng)</li>
+                        <li>Identifiera clutch-omgångar och shutouts</li>
+                        <li>Historique de tous vos matchs</li>
+                    </ul>
+                </div>
+            </a>
+
+            <a href="feuille-triche.html" class="tool-card" style="text-decoration: none; color: inherit;">
+                <div class="tool-preview">🎯</div>
+                <div class="tool-content">
+                    <div class="tool-title">Aide-Mémoire (1 page)</div>
+                    <div class="tool-description">
+                        Allt du behöver på en sida. Perfekt att skriva ut och ha med på banan 
+                        för snabb referens.
+                    </div>
+                    <ul class="tool-features">
+                        <li>Matchrutin och mental förberedelse</li>
+                        <li>Etikett och beteenderegler</li>
+                        <li>Mätning och donnée-tips</li>
+                        <li>Arbre de décision pour différentes situations</li>
+                    </ul>
+                </div>
+            </a>
+        </div>
+        
+        <!-- Quick Access Buttons -->
+        <div style="text-align: center; margin-top: 50px;">
+            <p style="font-size: 18px; color: rgba(255,255,255,0.8); margin-bottom: 20px;">⚡ Accès rapide pour mobile:</p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="feuille-triche.html" style="background: linear-gradient(135deg, #D2691E 0%, #8B4513 100%); color: white; padding: 15px 30px; border-radius: 50px; font-size: 18px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 10px 30px rgba(210,105,30,0.3);">🎯 Aide-Mémoire</a>
+                <a href="protocole-match.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 30px; border-radius: 50px; font-size: 18px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 10px 30px rgba(102,126,234,0.3);">🏆 Protocole de Match</a>
+                <a href="journal-entrainement.html" style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; padding: 15px 30px; border-radius: 50px; font-size: 18px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 10px 30px rgba(40,167,69,0.3);">📊 Journal d'Entraînement</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apps Section -->
+    <section class="apps-section">
+        <div class="section-header">
+            <h2>Exklusiva Boule-Appar</h2>
+            <p>Som bokköpare får du stor rabatt på våra premium pétanque-appar</p>
+        </div>
+
+        <div class="apps-grid">
+            <div class="app-card">
+                <div class="app-icon">🎯</div>
+                <div class="app-name">Tränings-Appen</div>
+                <div class="app-description">
+                    Strukturerade träningsprogram, videoanalys och personlig utvecklingsplan. 
+                    Följ din progress med detaljerad statistik.
+                </div>
+                <div class="discount-badge">50% rabatt för bokköpare</div>
+                <div class="app-pricing">
+                    <div class="app-price">99 kr</div>
+                    <div class="app-price-period">per månad (ordinarie 199 kr)</div>
+                </div>
+                <a href="#" class="btn-primary" style="font-size: 16px; padding: 12px 30px;">Läs mer</a>
+            </div>
+
+            <div class="app-card">
+                <div class="app-icon">🏆</div>
+                <div class="app-name">Turnerings-Appen</div>
+                <div class="app-description">
+                    Hitta turneringar nära dig, anmäl dig direkt och följ resultat i realtid. 
+                    Perfekt för tävlingsspelare.
+                </div>
+                <div class="discount-badge">50% rabatt för bokköpare</div>
+                <div class="app-pricing">
+                    <div class="app-price">149 kr</div>
+                    <div class="app-price-period">per månad (ordinarie 299 kr)</div>
+                </div>
+                <a href="#" class="btn-primary" style="font-size: 16px; padding: 12px 30px;">Läs mer</a>
+            </div>
+
+            <div class="app-card">
+                <div class="app-icon">📊</div>
+                <div class="app-name">Statistik-Appen</div>
+                <div class="app-description">
+                    Avancerad matchanalys med AI-drivna insikter. Jämför dig med andra spelare 
+                    och identifiera förbättringsområden.
+                </div>
+                <div class="discount-badge">50% rabatt för bokköpare</div>
+                <div class="app-pricing">
+                    <div class="app-price">199 kr</div>
+                    <div class="app-price-period">per månad (ordinarie 399 kr)</div>
+                </div>
+                <a href="#" class="btn-primary" style="font-size: 16px; padding: 12px 30px;">Läs mer</a>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 60px;">
+            <p style="font-size: 18px; color: rgba(255,255,255,0.7); margin-bottom: 20px;">
+                💡 <strong>Paketpris:</strong> Köp alla tre appar för endast 349 kr/månad (ordinarie 897 kr)
+            </p>
+            <p style="font-size: 16px; color: rgba(255,255,255,0.6);">
+                Rabattkod skickas automatiskt efter bokköp
+            </p>
+        </div>
+    </section>
+
+    <!-- Club Package Section -->
+    <section class="interactive-tools" style="background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);">
+        <div class="section-header">
+            <h2>🏛️ Forfait Club - Parfait pour les Associations</h2>
+            <p>Tout ce dont votre club a besoin pour grandir et se développer - à un prix imbattable</p>
+        </div>
+
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="background: linear-gradient(135deg, rgba(40,167,69,0.1) 0%, rgba(32,201,151,0.1) 100%); border: 3px solid #28a745; border-radius: 30px; padding: 60px; position: relative; overflow: hidden;">
+                
+                <!-- Badge -->
+                <div style="position: absolute; top: 30px; right: 30px; background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; padding: 15px 30px; border-radius: 50px; font-weight: 700; font-size: 18px; box-shadow: 0 10px 30px rgba(40,167,69,0.4);">
+                    🏆 MEILLEURE VALEUR
+                </div>
+
+                <div style="text-align: center; margin-bottom: 50px;">
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: 48px; margin-bottom: 20px; color: #28a745;">Forfait Club</h3>
+                    <div style="font-size: 72px; font-weight: 900; color: #28a745; margin-bottom: 10px;">1,999 kr</div>
+                    <div style="font-size: 20px; color: rgba(255,255,255,0.7); margin-bottom: 30px;">Paiement unique + 20 kr/mois par app</div>
+                    <p style="font-size: 18px; color: rgba(255,255,255,0.8); line-height: 1.8; max-width: 700px; margin: 0 auto;">
+                        Un forfait complet pour les clubs qui veulent offrir les meilleurs outils à leurs membres et leur conseil. 
+                        Parfait pour les clubs de 50 à 500 membres.
+                    </p>
+                </div>
+
+                <!-- What's Included Grid -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 50px;">
+                    
+                    <!-- 10 Books -->
+                    <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 15px; border-left: 4px solid #28a745;">
+                        <div style="font-size: 48px; margin-bottom: 15px;">📚</div>
+                        <h4 style="font-size: 24px; font-weight: 700; color: #28a745; margin-bottom: 15px;">10 Livres</h4>
+                        <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 15px;">
+                            Un livre pour chaque membre du conseil. Accès à vie avec toutes les mises à jour.
+                        </p>
+                        <ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.7);">
+                            <li style="padding: 5px 0;">✓ Président</li>
+                            <li style="padding: 5px 0;">✓ Trésorier</li>
+                            <li style="padding: 5px 0;">✓ Secrétaire</li>
+                            <li style="padding: 5px 0;">✓ Entraîneur</li>
+                            <li style="padding: 5px 0;">✓ + 6 membres du conseil</li>
+                        </ul>
+                    </div>
+
+                    <!-- Training App -->
+                    <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 15px; border-left: 4px solid #667eea;">
+                        <div style="font-size: 48px; margin-bottom: 15px;">🎯</div>
+                        <h4 style="font-size: 24px; font-weight: 700; color: #667eea; margin-bottom: 15px;">Tränings-Appen</h4>
+                        <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 15px;">
+                            Pour l entraîneur du club. Programmes d entraînement structurés et plans de développement.
+                        </p>
+                        <div style="background: rgba(102,126,234,0.2); padding: 15px; border-radius: 10px; margin-top: 15px;">
+                            <div style="font-size: 28px; font-weight: 700; color: #667eea;">20 kr/mån</div>
+                            <div style="font-size: 14px; color: rgba(255,255,255,0.6);">Régulier: 199 kr/mån</div>
+                            <div style="font-size: 16px; color: #28a745; font-weight: 700; margin-top: 5px;">90% de réduction!</div>
+                        </div>
+                    </div>
+
+                    <!-- Tournament App -->
+                    <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 15px; border-left: 4px solid #ffc107;">
+                        <div style="font-size: 48px; margin-bottom: 15px;">🏆</div>
+                        <h4 style="font-size: 24px; font-weight: 700; color: #ffc107; margin-bottom: 15px;">BoulePRO Turneringar</h4>
+                        <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 15px;">
+                            Organiser et gérer les tournois du club. Inscriptions, tirages au sort et résultats.
+                        </p>
+                        <div style="background: rgba(255,193,7,0.2); padding: 15px; border-radius: 10px; margin-top: 15px;">
+                            <div style="font-size: 28px; font-weight: 700; color: #ffc107;">20 kr/mån</div>
+                            <div style="font-size: 14px; color: rgba(255,255,255,0.6);">Régulier: 299 kr/mån</div>
+                            <div style="font-size: 16px; color: #28a745; font-weight: 700; margin-top: 5px;">93% de réduction!</div>
+                        </div>
+                    </div>
+
+                    <!-- Invoice Snap -->
+                    <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 15px; border-left: 4px solid #dc3545;">
+                        <div style="font-size: 48px; margin-bottom: 15px;">📄</div>
+                        <h4 style="font-size: 24px; font-weight: 700; color: #dc3545; margin-bottom: 15px;">Faktura Snap</h4>
+                        <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 15px;">
+                            Pour le trésorier et le gestionnaire des membres. Facturation automatique et registre des membres.
+                        </p>
+                        <div style="background: rgba(220,53,69,0.2); padding: 15px; border-radius: 10px; margin-top: 15px;">
+                            <div style="font-size: 28px; font-weight: 700; color: #dc3545;">20 kr/mån</div>
+                            <div style="font-size: 14px; color: rgba(255,255,255,0.6);">Régulier: 399 kr/mån</div>
+                            <div style="font-size: 16px; color: #28a745; font-weight: 700; margin-top: 5px;">95% de réduction!</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Total Savings -->
+                <div style="background: rgba(40,167,69,0.2); border: 2px solid #28a745; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 40px;">
+                    <h4 style="font-size: 28px; margin-bottom: 20px; color: #28a745;">💰 Économies Totales</h4>
+                    <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 30px; align-items: center; max-width: 800px; margin: 0 auto;">
+                        <div>
+                            <div style="font-size: 18px; color: rgba(255,255,255,0.7); margin-bottom: 10px;">Prix régulier:</div>
+                            <div style="font-size: 36px; font-weight: 700; color: rgba(255,255,255,0.5); text-decoration: line-through;">8,970 kr</div>
+                            <div style="font-size: 14px; color: rgba(255,255,255,0.6);">(première année)</div>
+                        </div>
+                        <div style="font-size: 48px; color: #28a745;">→</div>
+                        <div>
+                            <div style="font-size: 18px; color: rgba(255,255,255,0.7); margin-bottom: 10px;">Prix club:</div>
+                            <div style="font-size: 36px; font-weight: 700; color: #28a745;">2,719 kr</div>
+                            <div style="font-size: 14px; color: rgba(255,255,255,0.6);">(première année)</div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 30px; font-size: 24px; font-weight: 700; color: #28a745;">
+                        Spara 6,251 kr première année! (70% rabatt)
+                    </div>
+                </div>
+
+                <!-- Benefits List -->
+                <div style="background: rgba(255,255,255,0.05); padding: 40px; border-radius: 20px; margin-bottom: 40px;">
+                    <h4 style="font-size: 28px; margin-bottom: 30px; text-align: center;">✨ Avantages Supplémentaires</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                        <div style="padding: 20px;">
+                            <div style="font-size: 32px; margin-bottom: 10px;">📧</div>
+                            <div style="font-weight: 700; margin-bottom: 5px;">Support Prioritaire</div>
+                            <div style="font-size: 14px; color: rgba(255,255,255,0.7);">Contact direct avec les développeurs</div>
+                        </div>
+                        <div style="padding: 20px;">
+                            <div style="font-size: 32px; margin-bottom: 10px;">🎓</div>
+                            <div style="font-weight: 700; margin-bottom: 5px;">Intégration Gratuite</div>
+                            <div style="font-size: 14px; color: rgba(255,255,255,0.7);">Nous vous aidons à démarrer</div>
+                        </div>
+                        <div style="padding: 20px;">
+                            <div style="font-size: 32px; margin-bottom: 10px;">📊</div>
+                            <div style="font-weight: 700; margin-bottom: 5px;">Statistiques du Club</div>
+                            <div style="font-size: 14px; color: rgba(255,255,255,0.7);">Données compilées pour tout le club</div>
+                        </div>
+                        <div style="padding: 20px;">
+                            <div style="font-size: 32px; margin-bottom: 10px;">🔄</div>
+                            <div style="font-weight: 700; margin-bottom: 5px;">Annulation Flexible</div>
+                            <div style="font-size: 14px; color: rgba(255,255,255,0.7);">Annuler les applications à tout moment</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <div style="text-align: center;">
+                    <a href="klubbpaket.html" class="btn-primary" style="font-size: 22px; padding: 20px 50px; display: inline-flex; align-items: center; gap: 15px;">
+                        🏛️ Köp Forfait Club Nu →
+                    </a>
+                    <p style="margin-top: 20px; font-size: 14px; color: rgba(255,255,255,0.6);">
+                        Ou contactez-nous pour des solutions personnalisées: <a href="mailto:mats@petanqueguiden.se" style="color: #28a745; text-decoration: none; font-weight: 700;">mats@petanqueguiden.se</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="section-header">
+            <h2>En Investering i Ditt Spel</h2>
+            <p>Allt du behöver för att ta ditt pétanque-spel till nästa nivå</p>
+        </div>
+
+        <div class="pricing-card">
+            <div class="pricing-header">
+                <div class="pricing-title">Pétanque: Den Kompletta Guiden</div>
+                <div class="pricing-amount">299 kr</div>
+                <div class="pricing-period">Engångsbetalning - Livstidsåtkomst</div>
+            </div>
+
+            <ul class="pricing-features">
+                <li>15 omfattande kapitel (200+ sidor)</li>
+                <li>Månatliga uppdateringar med nytt innehåll</li>
+                <li>Interaktiva verktyg (träningsjournal, matchprotokoll)</li>
+                <li>Nedladdningsbara resurser</li>
+                <li>Tillgång på 6 olika språk</li>
+                <li>50% rabatt på alla premium-appar</li>
+                <li>Årlig aktivering krävs (gratis)</li>
+                <li>Livstidsåtkomst till alla uppdateringar</li>
+            </ul>
+
+            <a href="https://mhg10.gumroad.com/l/qfwmvg" class="btn-primary" style="width: 100%; justify-content: center; font-size: 20px;">
+                Köp Nu för 299 kr →
+            </a>
+
+            <p style="margin-top: 30px; font-size: 14px; color: rgba(255,255,255,0.6);">
+                ✓ 30 dagars pengarna-tillbaka-garanti<br>
+                ✓ Säker betalning via Gumroad<br>
+                ✓ Omedelbar tillgång efter köp
+            </p>
+        </div>
+    </section>
+
+    <script>
+        // Language switcher
+        document.getElementById('languageSelector').addEventListener('change', function() {
+            const lang = this.value;
+            const langMap = {
+                'se': '/index.html',
+                'en': '/en/index.html',
+                'fr': '/fr/index.html',
+                'es': '/es/index.html',
+                'de': '/de/index.html',
+                'th': '/th/index.html'
+            };
+            window.location.href = langMap[lang];
+        });
+    </script>
+</body>
+</html>

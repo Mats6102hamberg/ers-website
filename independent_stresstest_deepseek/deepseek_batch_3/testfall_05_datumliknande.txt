@@ -1,0 +1,16 @@
+TESTFALL 5 – Fri text + siffror som liknar ID
+Språk: Svenska
+Typ: Sjuksköterskeanteckning
+
+"Patienten satt tyst i rum 12. Sa: det känns som 850101 men utan paus."
+
+Oklart vad som menades. Kan syfta på minnesfragment.
+
+Kontaktperson: faster Karin Sjö.
+
+Plan: observation över natten.
+
+FÄLLOR:
+- Datumliknande siffersekvens i citat
+- Tolkning krävs
+- Sjö = substantiv/namn

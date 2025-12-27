@@ -1,0 +1,16 @@
+TESTFALL 1 – Namn som substantiv + oskyldig löptext
+Språk: Svenska
+Typ: Vårdcentralsjournal
+
+Patienten Björn Skog söker för ihållande trötthet. Björn arbetar med naturvård och beskriver att han "är mer i skogen än hemma".
+
+I anamnesen framkommer att Skog haft järnbrist tidigare. Modern Lena Gren behandlades för hypotyreos.
+
+Provtagning visar Hb 109. Uppföljning planeras.
+
+Anteckningen skrevs sent på kvällen då regnet slog mot skogen utanför mottagningen.
+
+FÄLLOR:
+- Björn / Skog / Gren = namn och substantiv
+- Upprepning utan etiketter
+- Kontextväxling (miljöbeskrivning)

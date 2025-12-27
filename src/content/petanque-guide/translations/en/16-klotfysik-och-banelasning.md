@@ -1,0 +1,9 @@
+---
+source: "16-klotfysik-och-banelasning.md"
+
+language: en
+part: 4
+chapter: 16
+version: 1.0
+translated: false
+---

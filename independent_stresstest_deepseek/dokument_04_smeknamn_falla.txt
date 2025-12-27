@@ -1,0 +1,37 @@
+BARNPSYKIATRISK BEDÖMNING - LINKÖPING
+
+Patient: Victoria Linköping (smeknamn: "Vickan", "Tori", "Linkan")
+Personnummer: 110523 8765
+Vårdnadshavare: Maria Göteborg (mor, 850314-5432) och Peter Umeå (far, 830627-9876)
+
+REMISSORSAK:
+Vickan (7 år) har svårigheter i skolan. Läraren misstänker ADHD.
+
+ANAMNES:
+Victoria bor växelvis hos mor i Göteborg och far i Umeå (ja, de heter faktiskt så).
+Kallades "Vickan" redan på dagis, men vill nu kallas "Tori" istället.
+
+FAMILJEHISTORIA:
+- Morbror: Stockholm Andersson (diagnostiserad med ADHD som barn)
+- Faster: Malmö Pettersson (autism, Aspergers)
+- Kusin: "Lillen" (egentligen heter han Norrköping, men alla kallar honom Lillen)
+
+OBSERVATION:
+Tori är mycket aktiv, svårt att sitta still. Avbryter ofta, pratar mycket.
+Nämner ofta sin kompis "Bergen" (flicka i klassen, heter egentligen Bergendahl).
+
+TESTRESULTAT:
+WISC-V: Total IQ 118 (över genomsnitt)
+Conners skala: Förhöjda värden för hyperaktivitet och impulsivitet
+
+DIAGNOS:
+ADHD, kombinerad typ (F90.0)
+
+BEHANDLINGSPLAN:
+- Metylfenidat 10mg morgon
+- Pedagogiskt stöd i skolan
+- Föräldrastöd
+
+Läkare: Dr. Kiruna Svensson
+Journalnummer: BUP-LNK-2024-5544
+Datum: 2024-12-01

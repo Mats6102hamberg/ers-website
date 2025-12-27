@@ -1,0 +1,62 @@
+ONKOLOGISK EPIKRIESE - KAROLINSKA UNIVERSITETSSJUKHUSET
+
+Patient: Bergen Andersson (smeknamn: "Bergan", "Berit")
+Personnummer: 19650412-7788 (ibland felskrivet som 650412 7788)
+Adresse: Stockholmsvägen 12, Uppsala
+
+DIAGNOS:
+Invasivt duktalt bröstcancer, höger bröst (C50.9)
+Stadium: T2N1M0 (Stadium IIA)
+ER+/PR+/HER2-
+
+BEHANDLINGSHISTORIK:
+
+2024-09-15: Mastektomi höger bröst + sentinel node biopsi
+Operatör: Dr. Oslo Bergström (överläkare, bröstkirurgi)
+
+2024-10-01: Start adjuvant kemoterapi (TAC-regim)
+- Docetaxel 75 mg/m²
+- Doxorubicin 50 mg/m²
+- Cyklofosfamid 500 mg/m²
+6 cykler à 21 dagar
+
+BIVERKNINGAR UNDER KEMOTERAPI:
+- Neutropeni grad 3 (cykel 2) → G-CSF support
+- Illamående grad 2 → Ondansetron 8mg
+- Perifer neuropati grad 1
+- Alopeci (total håravfall)
+
+LABORATORIEVÄRDEN (2024-11-20):
+Hb: 118 g/L (lågt)
+Leukocyter: 3.2 x10⁹/L
+Neutrofiler: 1.8 x10⁹/L
+Trombocyter: 145 x10⁹/L
+Kreatinin: 72 μmol/L
+ALAT: 34 U/L
+
+FORTSATT BEHANDLING:
+- Strålbehandling: 25 fraktioner à 2 Gy (start 2024-12-15)
+- Endokrin terapi: Tamoxifen 20mg dagligen i 5 år (start efter strålning)
+
+UPPFÖLJNING:
+- Mammografi årligen
+- Onkologkontroll var 3:e månad första året
+- Ansvarig läkare: Dr. Trondheim Svensson
+
+PSYKOSOCIALT STÖD:
+Kontakt med kurator: Malmö Eriksson
+Stödgrupp för bröstcancerpatienter: Onsdagar kl 14.00
+
+FAMILJ:
+Make: Göteborg Andersson (pnr: 19630523-9900)
+Barn: "Dottern" (smeknamn, egentligen Stockholm Andersson, 900815-3344)
+
+GENETISK UTREDNING:
+BRCA1/2: Negativ
+Familjehistoria: Morbror med prostatacancer, faster med äggstockscancer
+
+SAKSNUMMER: KS-ONK-2024-6677
+JOURNALNUMMER: 2024-BRÖST-4455
+
+Läkare: Dr. Linköping Hansen
+Datum: 2024-11-25

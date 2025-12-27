@@ -1,0 +1,17 @@
+TESTFALL 10 – Extrem edge-case
+Språk: Norska
+Typ: Kombinerat dokument
+
+Notat fra møte 03/04.
+
+"Han sa bare 'Oslo', lo og skrev 990101-1234 på en lapp."
+
+Det er uklart om dette var pasienten, faren eller Gubben som mente det.
+
+Videre forskning må skje uten identifiserende data.
+
+FÄLLOR:
+- Ort som "namn"
+- Personnummer tydligt
+- Oklara roller
+- Meta-kommentar om anonymisering

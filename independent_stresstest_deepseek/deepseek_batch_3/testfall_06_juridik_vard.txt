@@ -1,0 +1,16 @@
+TESTFALL 6 – Juridik i vårdkontext
+Språk: Svenska
+Typ: Intyg / rättsligt utlåtande
+
+Intyget utfärdas enligt Patientsäkerhetslagen (2010:659).
+
+Patienten, kallad "Lilleman" i familjen, bedöms sakna arbetsförmåga.
+
+Beslutet har överklagats av brodern Jan Ek.
+
+Underlaget innehåller känsliga uppgifter och ska inte spridas.
+
+FÄLLOR:
+- Smeknamn som primär identitet
+- Lagrum (får ej maskeras)
+- Kort efternamn (Ek)

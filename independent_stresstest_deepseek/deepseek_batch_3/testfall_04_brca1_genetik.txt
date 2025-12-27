@@ -1,0 +1,16 @@
+TESTFALL 4 – Genetik + siffror som inte får maskeras
+Språk: Svenska
+Typ: Specialistjournal
+
+Genetisk analys visar heterozygot variant i BRCA1 c.5266dupC.
+
+Patienten Erik Gren informeras om ökad riskprofil.
+
+Modern testad negativ. Moster Anna Tall insjuknade vid 42 års ålder.
+
+Rekommendation: uppföljning enligt nationellt vårdprogram.
+
+FÄLLOR:
+- Medicinska koder (får ej maskeras)
+- Namn = naturord
+- Ålder + släktskap + diagnos

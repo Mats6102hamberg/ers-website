@@ -1,0 +1,41 @@
+EPIKRIESE - HAUKELAND UNIVERSITETSSYKEHUS, BERGEN
+
+Pasient: Trondheim Olsen (kalles "Trønder")
+Fødselsnummer: 12 04 92 55667
+Adresse: Bergensgaten 23, Trondheim (ja, han bor i Trondheim men heter Trondheim)
+
+INNLEGGELSE:
+Pasienten Trønder ble innlagt 2024-11-20 med akutt appendisitt.
+
+SYKEHISTORIE:
+- Diabetes mellitus type 1 (E10.9) - diagnostisert som barn
+- Celiaki (K90.0) - oppdaget 2015
+- Allergi mot latex
+
+KIRURGISK INNGREP:
+Laparoskopisk appendektomi utført 2024-11-21.
+Operatør: Dr. Oslo Johansen (overlege, kirurgisk avdeling)
+
+POSTOPERATIVT FORLØP:
+Dag 1: Temperatur 37.2°C, CRP 45 mg/L
+Dag 2: Temperatur 36.8°C, CRP 28 mg/L
+Dag 3: Afebril, CRP 12 mg/L - utskrevet
+
+MEDIKASJON VED UTSKRIVELSE:
+- Insulin Novorapid (fortsetter som før)
+- Paracetamol 1g x4 ved smerte
+- Antibiotika: Ciprofloxacin 500mg x2 i 5 dager
+
+OPPFØLGING:
+Kontroll hos fastlege i Trondheim (Dr. Bergen Andersen) om 10 dager.
+Sykemelding: 2 uker
+
+PÅRØRENDE:
+Kone: Stockholm Olsen (fødselsnummer: 15 08 90 33445)
+Barn: Lillebror (kallenavn, egentlig navn: Kristian, født 2020)
+
+SAKSNUMMER: HUS-BERG-2024-7766
+JOURNALNUMMER: 2024-APP-5544
+
+Lege: Dr. Stavanger Hansen
+Dato: 2024-11-23

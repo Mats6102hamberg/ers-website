@@ -1,0 +1,16 @@
+TESTFALL 2 – Smeknamn + närstående + ostrukturerat ID
+Språk: Svenska
+Typ: Akutjournal
+
+Patienten inkom tillsammans med sin sambo som i texten benämns som "Gubben".
+
+Gubben uppger att patienten svimmat hemma. Lillebror kontaktades senare per telefon.
+
+I samtalet nämns siffrorna 740823 9912 i förbifarten när patienten letar efter legitimation.
+
+Status: BT 90/60, puls 110. CT skalle utan anmärkning.
+
+FÄLLOR:
+- Smeknamn utan namn
+- Relationer utan kön/ålder
+- Personnummer utan etikett + med mellanslag

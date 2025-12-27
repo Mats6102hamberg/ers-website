@@ -1,0 +1,38 @@
+PASIENTJOURNAL - STAVANGER LEGEVAKT
+
+Pasient: Oslo Hansen (ja, föräldrarna döpte mig efter huvudstaden)
+Fødselsdata: 05.07.1978 (personnummer: 050778 23456)
+Adresse: Osloveien 12, Stavanger
+
+AKTUELT:
+Oslo (kalles "Ozzy" av vänner) sökte vård för misstänkt lunginflammation.
+Har tidigare bott i både Oslo och Stockholm.
+
+SYKEHISTORIE:
+- Astma sedan barndomen (J45.0)
+- Allergi mot penicillin
+- Tidligere røyker (sluttet 2019)
+
+KLINISKE FUNN:
+Temperatur: 38.9°C
+Puls: 95 slag/min
+Blodtrykk: 135/85 mmHg
+SpO2: 94% på romluft
+
+RØNTGEN THORAX:
+Infiltrat i høyre underlapp, forenlig med pneumoni.
+
+DIAGNOSE:
+Samfunnservervet pneumoni (J18.9)
+
+BEHANDLING:
+- Amoxicillin 500mg x3 (OBS: allergi! Bytt til Erythromycin 500mg x3)
+- Paracetamol 1g ved feber
+- Sykemelding 7 dager
+
+OPPFØLGING:
+Kontroll om 5 dager. Ved forverring, kontakt Bergen legevakt (närmaste jourmottagning).
+
+Lege: Dr. Trondheim Larsen
+Journalnummer: STAV-2024-9876
+Dato: 2024-12-10

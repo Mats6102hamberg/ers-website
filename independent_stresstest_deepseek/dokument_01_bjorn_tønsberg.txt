@@ -1,0 +1,30 @@
+MEDICINSK JOURNAL - OSLO UNIVERSITETSSYKEHUS
+
+Pasient: Bjørn Tønsberg
+Fødselsnummer: 15 03 85 12345
+Adresse: Storgata 42, Oslo
+
+ANAMNESE:
+Pasienten Bjørn (kalles "Bjørnis" av familien) kom til akuttmottak med brystsmerter. 
+Han bor i nærheten av Tønsberg men jobber i Oslo sentrum.
+
+DIAGNOSE:
+Angina pectoris (ICD-10: I20.9)
+Hypertensjon (ICD-10: I10)
+
+BEHANDLING:
+- Nitroglycerin 0.4mg sublingualt
+- Metoprolol 50mg daglig
+- Atorvastatin 40mg kveld
+
+LABORATORIEPRØVER:
+Troponin-T: 0.03 ng/mL (normalt <0.014)
+CK-MB: 4.2 ng/mL
+Kreatinin: 98 μmol/L
+
+OPPFØLGING:
+Kontroll hos fastlege i Tønsberg om 2 uker.
+Saksnummer: SAK-2024/45678
+
+Lege: Dr. Stockholm (ja, det er faktisk mitt etternavn)
+Dato: 2024-12-15

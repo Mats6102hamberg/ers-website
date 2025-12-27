@@ -1,0 +1,9 @@
+{
+  "name": "petanque-guide",
+  "private": true,
+  "scripts": {
+    "build:web": "python3 scripts/build_web.py",
+    "serve:web": "python3 -m http.server -d build/web 8080",
+    "watch:web": "fswatch -o originals translations | xargs -n1 -I{} python3 scripts/build_web.py"
+  }
+}

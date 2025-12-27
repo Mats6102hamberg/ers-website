@@ -1,177 +1,107 @@
-# ERS Website - Enterprise Research Shield
+# Guld – Utvecklingsfilosofi
 
-En professionell landningssida för Enterprise Research Shield.
+## Utvecklingsfilosofi – Nivåer för mina appar
+Jag bygger många appar parallellt och vill kunna starta snabbt, testa idéer och visa upp fungerande flöden utan onödiga hinder. Därför börjar alla mina projekt i ett "lätt" läge utan databas, och växer först när behovet finns. Det finns tre nivåer:
 
----
+### Nivå 1 – Prototyp / Idé (ingen databas)
+- Standardläget för alla nya appar.
+- Ingen databas kopplad och inga lagrade användardata.
+- Endast UI, logik och hårdkodade exempel (mock-data).
+- Snabb utveckling, snabba deploys och minimalt med felkällor.
+- Säkert att visa upp för andra utan att skapa frågor om lagring eller GDPR.
 
-## 📁 Filstruktur
+Perfekt när jag bygger många appar samtidigt och vill ha en ren, stabil startpunkt.
 
-```
-ers-website/
-├── index.html          ← Huvudsidan (rör den inte)
-├── css/
-│   └── style.css       ← Designen (färger överst)
-├── js/
-│   └── main.js         ← Logiken (rör den inte)
-├── content/
-│   └── content.json    ← ⭐ ALLA TEXTER HÄR ⭐
-├── images/             ← Lägg bilder/logotyp här
-└── README.md           ← Denna fil
-```
+### Nivå 2 – Uppstart (databas när behov finns)
+När en app börjar få riktiga användningsfall kopplar jag in en databas först när det behövs för att spara:
+- användarflöden
+- historik
+- inställningar
+- arbetsmaterial
+- ekonomi eller statistik
 
----
+Då lägger jag till:
+- Vercel Postgres
+- `DATABASE_URL` i miljövariabler
+- Prisma som ORM
+- Ett litet, rent schema (endast det som behövs)
 
-## ✏️ Så här ändrar du innehåll
+Detta steg gör appen mer funktionell men fortfarande lätt att hantera.
 
-### 1. Öppna `content/content.json`
+### Nivå 3 – Robust / Produktion (för organisationer och känslig data)
+När en app ska användas seriöst av andra människor eller organisationer — t.ex. kommuner, föreningar, familjehemskonsulenter eller betalande kunder — bygger jag ut den till en "Robust-version". Det innebär:
+- Säker databas
+- Backup och loggning
+- Rättighetsstyrning
+- Möjlighet att radera/anonymisera data
+- Om det krävs: PUB-avtal och GDPR-rutiner
+- Skalbarhet och tydlig ansvarsstruktur
 
-Alla texter på sidan finns i denna fil. Strukturen är uppdelad i sektioner:
+Detta är slutmålet för appar som blir "på riktigt".
 
-| Sektion | Vad den styr |
-|---------|--------------|
-| `meta` | Sidtitel och SEO-beskrivning |
-| `header` | Logotyp, navigation, CTA-knapp |
-| `hero` | Huvudrubrik och intro |
-| `trust_banner` | De tre förtroendepunkterna |
-| `features` | "Varför ERS?"-korten |
-| `modes` | De tre driftlägena |
-| `security` | Säkerhetsåtaganden |
-| `target_audiences` | Målgrupper |
-| `cta_section` | Call-to-action sektionen |
-| `contact` | Kontaktformulär och företagsinfo |
-| `footer` | Sidfot |
+## Sammanfattning av min metod
+Jag skapar många appar snabbt, och varje app får växa i sin egen takt. Databas kopplas inte in förrän den verkligen behövs. Det gör att jag kan:
+- bygga fler idéer
+- undvika onödiga tekniska problem
+- jobba snabbare
+- testa koncept direkt
+- hålla projektet stabilt och rent
+- växa varje app först när den förtjänar det
 
-### 2. Exempel: Ändra kontaktuppgifter
+Den här filosofin gör att mina 10 appar + 10 robusta versioner blir skalbara, hållbara och lätta att vidareutveckla.
 
-Hitta `contact` → `company_info` i filen:
+## Nuvarande nivå för detta projekt
+➡️ **Nivå 1 – Ingen databas kopplad ännu.**
 
-```json
-"company_info": {
-  "name": "SmartFlow AB",
-  "org_number": "559050-6894",
-  "address": "Reimersholmsgatan 123, Stockholm",  ← Lägg till adress
-  "email": "kontakt@smartflow.se",                ← Lägg till email
-  "phone": "+46 70 123 45 67"                     ← Lägg till telefon
-}
-```
+Appen körs helt utan lagring. När behov uppstår kan den enkelt lyftas till Nivå 2.
 
-### 3. Spara och ladda om sidan
+## Min egen anteckning – Hur jag tänker med databaser i mina appar
+Det här är en påminnelse till mig själv. Jag bygger många appar parallellt, och det är viktigt att jag inte fastnar i databasstrul i början av varje projekt. Därför startar alla mina appar utan databas. Det gör utvecklingen mycket snabbare och enklare, och jag slipper problem på Vercel.
 
-Ändringarna syns direkt när du laddar om webbläsaren.
+**Grundidé:**
+👉 Appen ska först visa att idén fungerar. Databas kopplas på senare när det verkligen behövs.
 
----
+### 🔹 Varför ingen databas i början?
+- Det är onödigt att krångla innan jag vet att appen kommer användas på riktigt.
+- Vercel bygger snabbare utan Prisma.
+- Jag slipper frågor om GDPR, lagring, säkerhet och ansvar.
+- Jag kan bygga 10 appar snabbt och fokusera på funktion och flöden.
+- Om appen bara ska demonstreras eller användas lokalt räcker mock-data eller localStorage.
 
-## 🎨 Så här ändrar du design
+### 🔹 När ska jag koppla in en databas?
+Jag gör det först när appen uppfyller något av detta:
+- den ska börja användas av riktiga användare
+- appen behöver spara historik, inställningar eller data över tid
+- appen ska användas i ett verkligt sammanhang (t.ex. kommun, klubb, familjehem, ekonomi)
+- appen ska lanseras eller säljas
 
-### Färger
+**När det är dags lägger jag till:**
+- Vercel Postgres
+- `DATABASE_URL` i environment variables
+- Prisma installeras lokalt
+- Jag kör `npx prisma migrate dev` och `npx prisma generate`
+- Databasen används endast där det är absolut nödvändigt
 
-Öppna `css/style.css` och hitta `:root` högst upp:
+### 🔹 När blir appen “robust”?
+Det här är nivå 3. Jag går hit när appen ska användas av:
+- kommuner
+- företag
+- familjehemskonsulenter
+- när det finns känslig information
+- när jag ska ta betalt
 
-```css
-:root {
-  /* Primärfärger (mörka) */
-  --color-primary: #0f172a;       ← Mörkblå bakgrund
-  
-  /* Accentfärger (gröna) */
-  --color-accent: #10b981;        ← Grön accent
-  
-  /* Statusfärger för driftlägen */
-  --color-green: #10b981;         ← Research Mode
-  --color-amber: #f59e0b;         ← Adversarial Log Mode
-  --color-red: #ef4444;           ← Strict Mode
-}
-```
+**Då krävs:**
+- seriös databas
+- backup
+- loggning
+- rättighetsstyrning
+- GDPR-hantering
+- mer struktur och dokumentation
 
-Byt ut hex-koderna för att ändra färgtema.
+### 🔹 Kort sammanfattning (så jag minns snabbt)
+- **Nivå 1:** Starta utan databas. Bygg snabbt. Inga risker.
+- **Nivå 2:** Koppla databas endast när appen ska börja användas.
+- **Nivå 3:** Robust-version för riktiga organisationer och känsliga data.
 
-### Typsnitt
-
-Typsnittet (DM Sans) laddas från Google Fonts. För att byta:
-
-1. Gå till [fonts.google.com](https://fonts.google.com)
-2. Välj ett typsnitt och kopiera `<link>`-taggen
-3. Klistra in i `index.html` (ersätt befintlig font-länk)
-4. Uppdatera `--font-display` och `--font-body` i CSS
-
----
-
-## 📧 Kontaktformulär
-
-Formuläret är förberett men skickar ingenstans just nu. 
-
-### Alternativ för att aktivera:
-
-**1. Formspree (enklast)**
-1. Skapa konto på [formspree.io](https://formspree.io)
-2. Skapa ett formulär och kopiera endpoint-URL
-3. I `content.json`, uppdatera:
-   ```json
-   "form": {
-     "action_url": "https://formspree.io/f/DITT_ID"
-   }
-   ```
-
-**2. Netlify Forms**
-Om du hostar på Netlify, lägg till `netlify` attribut på formuläret.
-
-**3. Egen backend**
-Peka `action_url` till din egen server/API.
-
----
-
-## 🚀 Publicering
-
-### GitHub Pages (gratis)
-
-1. Skapa ett GitHub-repo
-2. Ladda upp alla filer
-3. Gå till Settings → Pages
-4. Välj branch `main` och spara
-5. Din sida finns på `https://dittnamn.github.io/reponamn`
-
-### Netlify (gratis)
-
-1. Gå till [netlify.com](https://netlify.com)
-2. Dra och släpp hela `ers-website`-mappen
-3. Klart! Du får en URL direkt
-
-### Egen server
-
-Ladda upp filerna till valfri webbserver. Ingen server-side kod krävs.
-
----
-
-## 🔒 Säkerhet
-
-- Sidan är statisk (ingen databas, ingen server-kod)
-- Alla texter ligger i JSON-filen
-- Formuläret kräver en extern tjänst för att faktiskt skicka data
-- Lägg ALDRIG känslig information i `content.json`
-
----
-
-## ❓ Vanliga frågor
-
-**Varför visas inte mina ändringar?**
-- Kontrollera att JSON-filen är korrekt formaterad (inga kommatecken som saknas)
-- Tömma webbläsarens cache (Ctrl+Shift+R)
-- Öppna webbläsarens konsol (F12) för felmeddelanden
-
-**Hur lägger jag till en logotyp?**
-1. Lägg bilden i `images/`-mappen
-2. I `css/style.css`, hitta `.logo__icon` och ersätt bakgrunden med:
-   ```css
-   .logo__icon {
-     background: url('../images/din-logo.png') center/contain no-repeat;
-   }
-   ```
-
-**Kan jag lägga till fler sektioner?**
-Ja, men det kräver ändringar i `main.js`. Kontakta mig så hjälper jag till.
-
----
-
-## 📞 Support
-
-Skapad av Claude i samarbete med Mats.
-Vid frågor eller ändringar, fortsätt konversationen!
+**Just detta projekt (Guld) är nu:**
+➡️ Nivå 1 – Ingen databas kopplad. Bygg fritt och snabbt.

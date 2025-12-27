@@ -1,0 +1,16 @@
+TESTFALL 7 – Fødselsnummer utan etikett
+Språk: Norska
+Typ: Medisinsk epikrise
+
+Pasienten Per Sol ble innlagt etter fall.
+
+Under samtalen ble tallrekken 12067899123 nevnt i forbindelse med legitimasjon.
+
+Ektefellen "Gamlefar" var til stede.
+
+CT caput uten patologiske funn.
+
+FÄLLOR:
+- Norsk fødselsnummer
+- Smeknamn
+- Sol = substantiv

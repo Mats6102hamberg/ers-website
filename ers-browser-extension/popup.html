@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ERS</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>ERS</h1>
+      <p class="subtitle">Stöd för reflektion och analys</p>
+    </header>
+
+    <main>
+      <div class="input-section">
+        <textarea 
+          id="userInput" 
+          placeholder="Skriv din fråga, ditt resonemang eller text för reflektion..."
+          rows="6"
+        ></textarea>
+        <button id="submitBtn" class="primary-btn">Skicka</button>
+      </div>
+
+      <div id="responseSection" class="response-section hidden">
+        <div class="response-header">
+          <span>Svar från ERS</span>
+          <button id="clearBtn" class="clear-btn">Rensa</button>
+        </div>
+        <div id="responseContent" class="response-content"></div>
+      </div>
+
+      <div id="loadingSection" class="loading-section hidden">
+        <div class="spinner"></div>
+        <p>Analyserar...</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
